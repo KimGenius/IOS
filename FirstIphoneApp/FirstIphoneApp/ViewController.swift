@@ -20,6 +20,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var randomText: UITextField!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBAction func getResult(_ sender: Any) {
+        let randomArr = randomText.text!.components(separatedBy: ",")
+        print(randomArr)
+        let random = Int(arc4random_uniform(UInt32(randomArr.count)))
+        print(random)
+        print(randomArr[random])
+        resultLabel.text = randomArr[random]
+    }
 
 }
 
